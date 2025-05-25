@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --hover-color: #0084ff;
+            --main-color: #fc0000;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-style: italic;
+
+
+        }
+
+        .header {
+            background-color: black;
+            padding: 10px 20px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+                width: 80%;
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    /* margin-right: 200px; */
+
+                    li a {
+                        text-decoration: none;
+                        padding: 10px 15px;
+                        margin: 0 6px;
+                        color: white;
+                        border-radius: 3px;
+                        font-size: 14px;
+                        transition: 0.3s;
+
+                        &.active,
+                        &:hover {
+                            background-color: #fff;
+                            color: var(--hover-color);
+                        }
+                    }
+                }
+
+                @media (max-width: 992px) {
+
+                    &,
+                    &~.buttons {
+                        display: none;
+                    }
+                }
+
+                >div {
+                    display: flex;
+                    align-items: center;
+                    gap: 50px;
+                }
+
+                @media (max-width: 992px) {
+                    &.showList {
+                        position: absolute;
+                        display: block;
+                        top: 45px;
+                        z-index: 9999999;
+                        background-color: #000000;
+                        width: 100%;
+                        left: 0;
+                        border-radius: 0 0 6px 6px;
+
+                        ul {
+                            display: block;
+                            width: 100%;
+                            padding: 10px 8px;
+
+                            li {
+                                margin-bottom: 6px;
+
+                                a {
+                                    display: block;
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+
+                        .from {
+                            text-align: center;
+                            padding: 7px;
+                            border-radius: 6px;
+                            width: 80%;
+                            margin: 8px auto;
+                            display: block;
+                        }
+
+                        .buttons {
+                            flex-direction: column;
+                            width: 100%;
+                            padding: 10px 8px;
+
+                            button {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .buttons {
+                display: flex;
+                gap: 15px;
+
+                button {
+                    padding: 10px 15px;
+                    border-radius: 6px;
+                    background-color: var(--main-color);
+                    cursor: pointer;
+                    color: white;
+                    border: none;
+                }
+            }
+
+            .icons {
+                display: none;
+                width: 30px;
+                height: 20px;
+                position: relative;
+                cursor: pointer;
+
+                span {
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #eee;
+                    border-radius: 1px;
+                    left: 0;
+                    transition: 0.3s;
+
+                    &:first-child {
+                        top: 0;
+                    }
+
+                    &:nth-child(2) {
+                        top: 8px;
+                    }
+
+                    &:last-child {
+                        top: 16px;
+                    }
+                }
+
+                @media (max-width: 992px) {
+
+                    & {
+                        display: block;
+                    }
+                }
+
+                &.show {
+                    span:first-child {
+                        top: 8px;
+                        transform: rotate(45deg);
+                    }
+
+                    span:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    span:last-child {
+                        top: 8px;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+
+            .from {
+                display: flex;
+                /* margin-right: 70px; */
+                margin-top: 5px;
+                border-radius: 6px;
+                width: 200px;
+
+                select {
+                    width: 100%;
+                    text-align: center;
+                    padding: 7px;
+                    border-radius: 6px;
+                    outline: none;
+                }
+
+                @media (max-width: 992px) {
+                    & {
+                        display: none;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a class="logo" href="home.html">
+            <img src="images/logo.webp" alt="logo">
+        </a>
+        <nav id="navbar-container">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About the car</a></li>
+                <li><a href="images.html">Image</a></li>
+                <li><a href="turbo.html">Car Turbo</a></li>
+                <li><a href="shop.html">Car shop</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+
+            <form action="" class="from">
+                <select name="" id="">
+                    <option value="1">$2000-4000</option>
+                    <option value="2">$4000-6000</option>
+                    <option value="3">$6000-8000</option>
+                    <option value="3">$8000-10000</option>
+                </select>
+            </form>
+        </nav>
+
+
+
+
+        <div class="icons">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+    </header>
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            fetch("home.html") 
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar-container").innerHTML = data;
+        
+                })
+                .catch(error => console.error("Error loading navbar:", error));
+
+        });
+
+
+
+        
+        </script> -->
+    <script src="index.js"></script>
+
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        --hover-color: #0084ff;
+        --main-color: #fc0000;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-style: italic;
+
+
+    }
+
+    .header {
+        background-color: black;
+        padding: 10px 20px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 68%;
+
+            ul {
+                list-style: none;
+                display: flex;
+                /* margin-right: 200px; */
+
+                li a {
+                    text-decoration: none;
+                    padding: 10px 15px;
+                    margin: 0 6px;
+                    color: white;
+                    border-radius: 3px;
+
+                    &.active,
+                    &:hover {
+                        background-color: #fff;
+                        color: var(--hover-color);
+                    }
+                }
+
+                @media (max-width: 992px) {
+
+                    &,
+                    &~.buttons {
+                        display: none;
+                    }
+                }
+            }
+
+            >div {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+            }
+
+
+        }
+
+        .icons {
+            display: none;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            background-color: red;
+
+            span {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: white;
+            }
+
+            span:first-child {
+                top: 0;
+            }
+
+            span:nth-child(2) {
+                top: 8px;
+            }
+
+            span:last-child {
+                height: 16px;
+            }
+
+            @media (max-width: 992px) {
+
+                & {
+                    display: block;
+                }
+            }
+        }
+
+        .from {
+            display: flex;
+            /* margin-right: 70px; */
+            margin-top: 5px;
+            border-radius: 6px;
+
+            select {
+                width: 200px;
+                text-align: center;
+                padding: 7px;
+                border-radius: 6px;
+
+            }
+
+            @media (max-width: 992px) {
+                & {
+                    display: none;
+                }
+            }
+        }
+    }
+</style>
+
+<body>
+    <header class="header">
+        <a class="logo" href="home.htm">
+            <img src="images/logo.webp" alt="logo">
+        </a>
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About the car</a></li>
+                    <li><a href="images.html">Image</a></li>
+                    <li><a href="turbo.html">Car Turbo</a></li>
+                    <li><a href="shop.html">Car shop</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+
+
+
+
+        </nav>
+
+
+        <form action="" class="from">
+            <select name="" id="">
+                <option value="1">$2000-4000</option>
+                <option value="2">$4000-6000</option>
+                <option value="3">$6000-8000</option>
+                <option value="3">$8000-10000</option>
+            </select>
+        </form>
+
+        <div class="icons">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+    </header>
+</body>
+
+</html> -->

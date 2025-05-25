@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop DODGE</title>
+    <link rel="stylesheet" href="shop.css">
+    <script src="nav_all.js"></script>
+
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+
+    <div class="container">
+        <pre>Dodge Demon: The Ultimate Drag Racer
+
+The Dodge Demon is a high-performance version of the Challenger, designed to dominate the drag strip.
+Powered by a 6.2L Supercharged HEMI V8 engine, it produces up to 840 horsepower with race fuel,
+making it the fastest production muscle car in the world.
+
+With a 0-60 MPH time of just 2.3 seconds and a quarter-mile time of 9.65 seconds,
+the Demon is built for speed. It features advanced drag-racing technology,
+including a transbrake and the exclusive "Demon Crate" for enhanced track performance.
+
+The Demon is the pinnacle of muscle car engineering, combining raw power and cutting-edge innovation.</pre>
+    </div>
+    <div class="image-gallery">
+        <!-- الصورة الرئيسية -->
+        <div class="main-image">
+            <img id="mainImage" src="images/dodge dimon1.jpg" alt="Main Image">
+        </div>
+
+        <!-- الصور المصغرة -->
+        <div class="thumbnail-images">
+            <img src="images/dodge dimon1.jpg" alt="Thumbnail 1" onclick="changeMainImage(this)">
+            <img src="images/demon black.jpg" id="black" alt="Thumbnail 2" onclick="changeMainImage(this)">
+            <img src="images/demon r.jpg" id="red" alt="Thumbnail 3" onclick="changeMainImage(this)">
+            <img src="images/demon w.jpg" id="white" alt="Thumbnail 4" onclick="changeMainImage(this)">
+        </div>
+    </div>
+
+    <div class="shop_form">
+        <form>
+            <label for="color">Colors</label><br>
+            <select id="colorSelect" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="black">1 - Black</option>
+                <option value="white">2 - White</option>
+                <option value="red">3 - Red</option>
+            </select><br>
+
+            <label for="">Area</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Cairo</option>
+                <option value="2">2 - Giza</option>
+                <option value="2">3 - Alexandria</option>
+                <option value="2">4 - Luxor</option>
+                <option value="2">5 - Aswan</option>
+                <option value="2">6 - Red Sea</option>
+                <option value="2">7 - Qena</option>
+                <option value="2">8 - Sohag</option>
+                <option value="2">9 - Assiut</option>
+                <option value="2">10 - Minya</option>
+                <option value="2">11 - Beni Suef</option>
+                <option value="2">12 - Fayoum</option>
+                <option value="2">13 - New Valley</option>
+                <option value="2">14 - Matrouh</option>
+                <option value="2">15 - Beheira</option>
+                <option value="2">16 - Kafr El Sheikh</option>
+                <option value="2">17 - Monufia</option>
+                <option value="2">18 - Gharbia</option>
+                <option value="2">19 - Dakahlia</option>
+                <option value="2">20 - Damietta</option>
+                <option value="2">21 - Port Said</option>
+                <option value="2">22 - Ismailia</option>
+                <option value="2">23 - Suez</option>
+                <option value="2">24 - Sharqia</option>
+                <option value="2">25 - North Sinai</option>
+                <option value="2">26 - South Sinai</option>
+            </select><br>
+
+            <label for="">Pay</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Cash</option>
+                <option value="2">2 - Installments</option>
+            </select>
+        </form>
+        <p>You can buy from Galaxy.</p>
+        <p>$89,700.00</p>
+        <form>
+            <button class="buy">Location</button>
+        </form>
+    </div>
+
+    <script>
+        function changeMainImage(element) {
+            document.getElementById("mainImage").src = element.src;
+        }
+
+        document.getElementById("colorSelect").addEventListener("change", function () {
+            let selectedColor = this.value;
+            let newImage = document.getElementById(selectedColor); // جلب الصورة بناءً على ID اللون
+
+            if (newImage) {
+                document.getElementById("mainImage").src = newImage.src;
+            }
+        });
+    </script>
+
+    <!-- ----------------------------------------------------------- -->
+
+    <div class="container1">
+        <pre>Dodge Charger: A Blend of Power and Practicality
+
+The Dodge Charger is an iconic muscle car that combines high performance with everyday usability.
+Known for its aggressive design and powerful engine options, the Charger offers something for everyone,
+from a 3.6L V6 to the monstrous 6.2L Supercharged HEMI V8 in the Hellcat models.
+
+With up to 807 horsepower, a top speed exceeding 200 MPH, and advanced performance features,
+the Charger is a beast on the road. Its spacious interior, modern tech,
+and bold styling make it perfect for families and enthusiasts alike.
+
+The Charger stands as a symbol of American muscle, delivering power, speed, and comfort in one thrilling package.</pre>
+    </div>
+
+    <div class="image-gallery">
+        <!-- الصورة الرئيسية -->
+        <div class="main-image">
+            <img id="mainImage1" src="images/charger poster.jpg" alt="Main Image">
+        </div>
+
+        <!-- الصور المصغرة -->
+        <div class="thumbnail-images">
+            <img src="images/charger poster.jpg" alt="Thumbnail 1" onclick="changeMainImage1(this)">
+            <img src="images/charger black.jpg" id="black" alt="Thumbnail 2" onclick="changeMainImage1(this)">
+            <img src="images/charger w.jpg" id="white" alt="Thumbnail 3" onclick="changeMainImage1(this)">
+            <img src="images/charger b.jpg" id="blue" alt="Thumbnail 4" onclick="changeMainImage1(this)">
+        </div>
+
+    </div>
+    <div class="shop_form">
+        <form action="" class="">
+            <label for="color">Colors</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Black</option>
+                <option value="2">2 - width</option>
+                <option value="3">3 - Blu</option>
+            </select><br>
+
+            <label for="">Area</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Cairo</option>
+                <option value="2">2 - Giza</option>
+                <option value="2">3 - Alexandria</option>
+                <option value="2">4 - Luxor</option>
+                <option value="2">5 - Aswan</option>
+                <option value="2">6 - Red Sea</option>
+                <option value="2">7 - Qena</option>
+                <option value="2">8 - Sohag</option>
+                <option value="2">9 - Assiut</option>
+                <option value="2">10 - Minya</option>
+                <option value="2">11 - Beni Suef</option>
+                <option value="2">12 - Fayoum</option>
+                <option value="2">13 - New Valley</option>
+                <option value="2">14 - Matrouh</option>
+                <option value="2">15 - Beheira</option>
+                <option value="2">16 - Kafr El Sheikh</option>
+                <option value="2">17 - Monufia</option>
+                <option value="2">18 - Gharbia</option>
+                <option value="2">19 - Dakahlia</option>
+                <option value="2">20 - Damietta</option>
+                <option value="2">21 - Port Said</option>
+                <option value="2">22 - Ismailia</option>
+                <option value="2">23 - Suez</option>
+                <option value="2">24 - Sharqia</option>
+                <option value="2">25 - North Sinai</option>
+                <option value="2">26 - South Sinai</option>
+            </select><br>
+
+            <label for="">Pay</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Cash</option>
+                <option value="2">2 - Installments</option>
+            </select>
+        </form>
+        <p>You can buy from Galaxy.</p>
+        <p>$89,700.00</p>
+        <form>
+            <button class="buy">Location</button>
+        </form>
+    </div>
+
+
+    <script>
+        // تغيير الصورة الرئيسية عند النقر على الصور المصغرة
+        const changeMainImage1 = (thumbnail) => {
+            const mainImage1 = document.getElementById("mainImage1");
+            const thumbnails = document.querySelectorAll(".thumbnail-images img");
+
+            // تحديث مصدر الصورة الرئيسية
+            mainImage1.src = thumbnail.src;
+
+            // إزالة التنشيط من جميع الصور المصغرة
+            thumbnails1.forEach(img => img.classList.remove("active"));
+
+            // إضافة التنشيط للصورة التي تم النقر عليها
+            thumbnail1.classList.add("active");
+        };
+    </script>
+
+    <!-- ----------------------------------------------------------- -->
+
+    <div class="container1">
+        <pre>Dodge Durango: Power Meets Versatility
+
+            The Dodge Durango is a powerful SUV that combines muscle car performance with family-friendly practicality.
+            Offering engines up to a 6.2L Supercharged HEMI V8 with 710 HP in the SRT Hellcat,
+            it’s one of the fastest SUVs on the market.
+            
+            With seating for up to 7 passengers, a towing capacity of 8,700 lbs,
+            and advanced tech features, the Durango is perfect for both thrilling drives and daily use.
+            It’s the ultimate blend of power, style, and utility.</pre>
+    </div>
+
+    <div class="image-gallery">
+        <!-- الصورة الرئيسية -->
+        <div class="main-image">
+            <img id="mainImage2" src="images/Durango post.jpg" alt="Main Image">
+        </div>
+
+        <!-- الصور المصغرة -->
+        <div class="thumbnail-images">
+            <img src="images/Durango post.jpg" alt="Thumbnail 1" onclick="changeMainImage2(this)">
+            <img src="images/Durango w.jpg" alt="Thumbnail 2" onclick="changeMainImage2(this)">
+            <img src="images/Durango b.jpg" alt="Thumbnail 3" onclick="changeMainImage2(this)">
+            <img src="images/Durango r.jpg" alt="Thumbnail 4" onclick="changeMainImage2(this)">
+        </div>
+
+    </div>
+    <div class="shop_form">
+        <form action="" class="">
+            <label for="color">Colors</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Black</option>
+                <option value="2">2 - width</option>
+                <option value="3">3 - Red</option>
+            </select><br>
+
+            <label for="">Area</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Cairo</option>
+                <option value="2">2 - Giza</option>
+                <option value="2">3 - Alexandria</option>
+                <option value="2">4 - Luxor</option>
+                <option value="2">5 - Aswan</option>
+                <option value="2">6 - Red Sea</option>
+                <option value="2">7 - Qena</option>
+                <option value="2">8 - Sohag</option>
+                <option value="2">9 - Assiut</option>
+                <option value="2">10 - Minya</option>
+                <option value="2">11 - Beni Suef</option>
+                <option value="2">12 - Fayoum</option>
+                <option value="2">13 - New Valley</option>
+                <option value="2">14 - Matrouh</option>
+                <option value="2">15 - Beheira</option>
+                <option value="2">16 - Kafr El Sheikh</option>
+                <option value="2">17 - Monufia</option>
+                <option value="2">18 - Gharbia</option>
+                <option value="2">19 - Dakahlia</option>
+                <option value="2">20 - Damietta</option>
+                <option value="2">21 - Port Said</option>
+                <option value="2">22 - Ismailia</option>
+                <option value="2">23 - Suez</option>
+                <option value="2">24 - Sharqia</option>
+                <option value="2">25 - North Sinai</option>
+                <option value="2">26 - South Sinai</option>
+            </select><br>
+
+            <label for="">Pay</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected>What do you prefer?</option>
+                <option value="1">1 - Cash</option>
+                <option value="2">2 - Installments</option>
+            </select>
+        </form>
+        <p>You can buy from Galaxy.</p>
+        <p>$89,700.00</p>
+        <form>
+            <button class="buy">Location</button>
+        </form>
+    </div>
+
+
+    <script>
+        // تغيير الصورة الرئيسية عند النقر على الصور المصغرة
+        const changeMainImage2 = (thumbnail) => {
+            const mainImage2 = document.getElementById("mainImage2");
+            const thumbnails = document.querySelectorAll(".thumbnail-images img");
+
+            // تحديث مصدر الصورة الرئيسية
+            mainImage2.src = thumbnail.src;
+
+            // إزالة التنشيط من جميع الصور المصغرة
+            thumbnails2.forEach(img => img.classList.remove("active"));
+
+            // إضافة التنشيط للصورة التي تم النقر عليها
+            thumbnails2.classList.add("active");
+        };
+    </script>
+
+    <audio id="myAudio" src="Dodge_Charger_Hellcat_Exhaust_And_Interior_Acceleration_Sound_Ef.mp3" autoplay preload="auto">
+        <source src="Dodge_Charger_Hellcat_Exhaust_And_Interior_Acceleration_Sound_Ef.mp3" type="audio/mpeg">
+        <source src="Dodge_Charger_Hellcat_Exhaust_And_Interior_Acceleration_Sound_Ef.mp3" type="audio/ogg">
+    </audio>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let audio = document.querySelector("audio");
+            document.body.addEventListener("click", function() {
+                audio.play();
+            }, { once: true }); // يعمل فقط عند أول نقرة
+        });
+        </script>
+</body>
+
+</html>
